@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pharos Anchor — Document Integrity. Self-Custody.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0e1a;
+      --surface:  #111827;
+      --border:   #1e2d45;
+      --gold:     #00d4ff;
+      --gold-dim: #0089a8;
+      --text:     #e2e8f0;
+      --muted:    #4a6080;
+      --green:    #00d4ff;
+      --font:     Menlo, "Courier New", Courier, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+    .section {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ── Typography ── */
+    h2 {
+      font-size: 1.15rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    p:last-of-type { margin-bottom: 0; }
+
+    strong { color: #ffffff; font-weight: bold; }
+
+    .muted { color: var(--muted); font-size: 0.85rem; }
+
+    /* ── 1. HEADER ── */
+    #header {
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .logo {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    .badge {
+      display: inline-block;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      padding: 7px 18px;
+    }
+
+    /* ── 2. FOUNDER STORY ── */
+    #founder .eyebrow {
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    #founder h2 {
+      font-size: 1.35rem;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+
+    /* ── 3 & 4. PRODUCT CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 40px;
+    }
+
+    .key-line {
+      border-left: 3px solid var(--gold);
+      padding-left: 18px;
+      color: #ffffff;
+      margin: 28px 0;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .pricing-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+
+    .target {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .target span { color: var(--text); }
+
+    /* ── 5. CONTACT ── */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 540px) {
+      .field-row { grid-template-columns: 1fr; }
+      .section { padding: 60px 20px; }
+      .card { padding: 28px 20px; }
+      .logo { font-size: 1.7rem; }
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    input, textarea {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid #2a2a2a;
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color 0.15s;
+      resize: vertical;
+    }
+
+    input::placeholder, textarea::placeholder { color: #2a3a50; }
+    input:focus, textarea:focus { border-color: var(--gold-dim); }
+
+    textarea { min-height: 130px; }
+
+    .submit-btn {
+      align-self: flex-start;
+      background: var(--gold);
+      color: #0d0d0d;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      border: none;
+      padding: 14px 36px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .submit-btn:hover { background: #33ddff; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 32px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--border);
+    }
+
+    footer .footer-logo {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER -->
+  <section id="header" class="section">
+    <img src="pharos_logoconcept1.jpg" alt="Pharos Anchor" style="max-width:280px; display:block; margin:0 auto 20px;" />
+    <div class="tagline">In Tenebris Lux. &nbsp; In Veritate Salus.</div>
+    <div class="badge">Patent Pending &mdash; U.S. App. No. 63/993,376</div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 2. FOUNDER STORY -->
+  <section id="founder" class="section">
+    <div class="eyebrow">The Origin</div>
+    <h2>18 Days. No Code Background. One Truth Protocol.</h2>
+
+    <p>
+      I am not a programmer. I am someone who looked at the world and decided that
+      humanity has a truth problem — and that the people best positioned to solve it
+      were not waiting for permission. I sat down with a conviction and an AI assistant.
+      Eighteen days later, Pharos Anchor existed: a cryptographically sound,
+      patent-pending document integrity protocol built by one person with no engineering
+      background. That is not a footnote. That is the point.
+    </p>
+
+    <p>
+      Pharos Anchor exists because the tools for establishing truth should belong to the
+      people who need them — not to a company, a blockchain, or a server you cannot
+      control. We built the infrastructure. You own the proof.
+    </p>
+
+    <p>
+</p>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 3. ANCHOR SENTINEL -->
+  <section id="sentinel" class="section">
+    <div class="card">
+      <h2>The Anchor Sentinel</h2>
+
+      <p>
+        The Anchor Sentinel is a document integrity tool that runs entirely on your
+        own computer. It generates a unique cryptographic fingerprint of any file —
+        a contract, a deed, a photograph, a report — and records it in a
+        tamper-evident ledger that lives on your hard drive. No cloud. No third
+        party. No monthly fee to a company you have to trust. Just math, running
+        locally, producing a Certificate of Verity that proves your document
+        existed, unchanged, at a specific moment in time.
+      </p>
+
+      <div class="key-line">
+        "Every other digital notary asks you to trust their company or a public
+        blockchain. Pharos is the only one that asks you to trust the math on the
+        machine sitting right in front of you. If my company disappears tomorrow,
+        your proof of truth remains immutable on your hard drive."
+      </div>
+
+      <p class="muted">
+        Designed for law firms, title companies, and compliance officers who need
+        document integrity they can explain to a judge — and control themselves.
+      </p>
+
+      <div class="pricing-row">
+        <div>
+          <div class="price">$1,500 / month</div>
+          <div class="price-note">Retainer — includes setup, support, and deployment</div>
+          <div class="target">Ideal for: <span>Law firms &nbsp;&middot;&nbsp; Title companies &nbsp;&middot;&nbsp; Compliance officers</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 4. AI WORKSHOP -->
+  <section id="workshop" class="section">
+    <div class="card">
+      <h2>The AI Workshop</h2>
+
+      <p>
+        In a single session, you will learn how to use AI tools to build real,
+        working software for your business — without a computer science degree,
+        without hiring a developer, and without waiting months for an idea to
+        become a product. We start from your specific problem and end with a
+        working prototype you own. The goal is not to teach you about AI.
+        The goal is to make you powerful with it.
+      </p>
+
+      <div class="pricing-row">
+        <div>
+          <div class="price">$1,500</div>
+          <div class="price-note">Single session &mdash; in person or remote</div>
+          <div class="target">Ideal for: <span>Small business owners ready to build</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- 5. CONTACT -->
+  <section id="contact" class="section">
+    <h2>Get In Touch</h2>
+
+    <form action="mailto:hello@pharosanchor.com" method="POST" enctype="text/plain">
+      <div class="field-row">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="Name" placeholder="Your full name" required />
+        </div>
+        <div>
+          <label for="business">Business</label>
+          <input type="text" id="business" name="Business" placeholder="Your company or firm" />
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="you@yourfirm.com" required />
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" placeholder="Tell us what you are trying to protect."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">SEND MESSAGE</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-logo">⬡ PHAROS ANCHOR LLC</div>
+    <div>Patent Pending &mdash; U.S. App. No. 63/993,376</div>
+    <div style="margin-top:8px;">&copy; 2026 Pharos Anchor LLC. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
