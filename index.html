@@ -223,6 +223,37 @@
 
     .submit-btn:hover { background: #33ddff; }
 
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    nav a:hover { color: var(--gold); }
+
+    .section { scroll-margin-top: 49px; }
+
+    @media (max-width: 540px) {
+      nav { justify-content: flex-start; overflow-x: auto; }
+      nav a { padding: 12px 14px; font-size: 0.7rem; }
+    }
+
     /* ── FOOTER ── */
     footer {
       text-align: center;
@@ -241,6 +272,14 @@
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#sentinel">Anchor Sentinel</a>
+    <a href="#workshop">AI Workshop</a>
+    <a href="#agent-build">Custom Agent Build</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- 1. HEADER -->
   <section id="header" class="section">
