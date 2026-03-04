@@ -168,6 +168,101 @@
 
     .target span { color: var(--text); }
 
+    /* ── FOUNDING COHORT CARD ── */
+    .founding-card {
+      margin-top: 32px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .founding-card-header {
+      background: var(--gold);
+      padding: 24px 28px 20px;
+    }
+
+    .founding-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0a0e1a;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .founding-price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0a0e1a;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .founding-subtitle {
+      font-size: 0.78rem;
+      color: #0a3a4a;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .founding-features {
+      list-style: none;
+      padding: 24px 28px 0;
+    }
+
+    .founding-features li {
+      color: var(--text);
+      font-size: 0.88rem;
+      padding: 8px 0 8px 16px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .founding-features li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .founding-seeking {
+      padding: 20px 28px 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .founding-seeking span { color: var(--text); }
+
+    .founding-cta {
+      display: inline-block;
+      margin: 24px 28px 0;
+      background: var(--gold);
+      color: #0d0d0d;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      padding: 14px 36px;
+      transition: background 0.15s;
+    }
+
+    .founding-cta:hover { background: #33ddff; }
+
+    .founding-footnote {
+      padding: 16px 28px 24px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 540px) {
+      .founding-card-header { padding: 20px 20px 16px; }
+      .founding-features { padding: 20px 20px 0; }
+      .founding-seeking { padding: 16px 20px 0; }
+      .founding-cta { margin: 20px 20px 0; }
+      .founding-footnote { padding: 14px 20px 20px; }
+    }
+
     /* ── 5. CONTACT ── */
     form {
       display: flex;
@@ -348,18 +443,31 @@
       </p>
 
       <p>
-        We are currently selecting three to five founding pilot partners in the
-        New England legal and real estate market. Pilot partners receive 500
-        anchoring events over 30 days at no cost. Founding clients who convert
-        to a full retainer join the Pharos Anchor network at a preferred rate.
+        We are currently selecting five founding partners across the U.S. legal
+        and real estate market for our exclusive Founding Cohort pilot program.
+        Founding partners receive full Anchor Sentinel access for 30 days of
+        real-world stress testing. Firms that convert join the Pharos Anchor
+        network at permanent founding client pricing — locked for the life of
+        their engagement.
       </p>
 
-      <div class="pricing-row">
-        <div>
-          <div class="price">Pilot Program — No Cost</div>
-          <div class="price-note">500 document anchoring events &middot; 30-day trial &middot; Limited to 3-5 founding firms</div>
-          <div class="target">Seeking: <span>Law firms &nbsp;&middot;&nbsp; Title companies &nbsp;&middot;&nbsp; Real estate offices &nbsp;&middot;&nbsp; New England region</span></div>
+      <div class="founding-card">
+        <div class="founding-card-header">
+          <div class="founding-title">Founding Cohort</div>
+          <div class="founding-price">$1,500</div>
+          <div class="founding-subtitle">Installation &amp; Provisioning Fee</div>
         </div>
+        <ul class="founding-features">
+          <li>Remote installation — Mac and Windows</li>
+          <li>30-minute founding partner onboarding session with the founder</li>
+          <li>30 days of direct founder access</li>
+          <li>Unlimited document anchoring during pilot period</li>
+          <li>Permanent founding client pricing locked on conversion</li>
+          <li>Early access to post-quantum security architecture</li>
+        </ul>
+        <div class="founding-seeking">Seeking: <span>Law firms &nbsp;&middot;&nbsp; Title companies &nbsp;&middot;&nbsp; Real estate brokerages &nbsp;&middot;&nbsp; U.S. nationwide</span></div>
+        <a href="#contact" class="founding-cta">Apply for Pilot Access</a>
+        <div class="founding-footnote">Limited to five founding firms. Applications close within 30 days of March 5, 2026 announcement.</div>
       </div>
     </div>
   </section>
