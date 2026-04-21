@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pharos Anchor — Document Integrity. Self-Custody.</title>
+  <title>Pharos Anchor — Sovereign AI Infrastructure</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -93,6 +93,60 @@
       font-style: italic;
       letter-spacing: 0.04em;
       margin-bottom: 0;
+    }
+
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+      margin: 0 auto 16px;
+      max-width: 560px;
+    }
+
+    .hero-lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 0 auto 24px;
+      max-width: 560px;
+      line-height: 1.65;
+    }
+
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin: 24px 0;
+    }
+
+    .benchmark-table th,
+    .benchmark-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .benchmark-table th {
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+    }
+
+    .benchmark-table td:last-child {
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .hash-line {
+      font-size: 0.78rem;
+      word-break: break-all;
+      color: var(--text);
+      margin: 20px 0;
+      padding: 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
     }
 
     .badge {
@@ -381,17 +435,18 @@
     <a href="#founder">Our Story</a>
     <a href="#sentinel">Anchor Sentinel</a>
     <a href="#astrum">Astrum OS</a>
-    <a href="#bridge">Sovereign Bridge</a>
-    <a href="#workshop">AI Workshop</a>
-    <a href="#agent-build">Custom Agent Build</a>
+    <a href="#benchmark">Proven at Scale</a>
+    <a href="#built">Built for Tomorrow</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <!-- 1. HEADER -->
   <section id="header" class="section">
-    <img src="pharos_logoconcept1.jpg" alt="Pharos Anchor" style="max-width:280px; display:block; margin:0 auto 20px;" />
+    <img src="pharos_logoconcept1.jpg" alt="Pharos Anchor" style="max-width:280px; display:block; margin:0 auto 24px;" />
+    <div class="hero-title">Pharos Anchor — Sovereign AI Infrastructure</div>
+    <p class="hero-lead">The mandatory notarization layer for the post-truth economy.</p>
     <div class="tagline">In Tenebris Lux. &nbsp; In Veritate Salus.</div>
-    <div class="tagline-en">"In darkness, light. &nbsp; In truth, salvation."</div>
+    <div class="tagline-en">"In darkness, light. In truth, salvation."</div>
   </section>
 
   <hr class="divider" />
@@ -402,18 +457,20 @@
     <h2>We Looked At The World And Decided Humanity Has A Truth Problem.</h2>
 
     <p>
-      We looked at the world and decided that humanity has a truth problem — and that
-      the people best positioned to solve it were not waiting for permission.
+      Pharos Anchor exists because the tools for establishing truth should belong to the
+      people who need them — not to a tech company, not to a cloud provider, not to a
+      server you cannot control.
     </p>
 
     <p>
-      Pharos Anchor exists because the tools for establishing truth should belong to the
-      people who need them. Not to a tech company. Not to a cloud provider. Not to a
-      server you cannot control. We built a cryptographically sound, patent-pending
-      protocol that allows anyone to mathematically prove the integrity of their data.
+      We built a cryptographically sound, patent-pending protocol that allows any enterprise
+      to mathematically prove the integrity of their data, entirely within their own physical
+      infrastructure. No third party. No cloud dependency. No trust required — only math.
     </p>
 
-    <p>We built the infrastructure. You own the proof.</p>
+    <p>
+      We built the infrastructure. You own the proof.
+    </p>
 
   </section>
 
@@ -422,161 +479,174 @@
   <!-- 3. ANCHOR SENTINEL -->
   <section id="sentinel" class="section">
     <div class="card">
-      <h2>The Anchor Sentinel &mdash; Local Sovereignty</h2>
+      <h2>The Anchor Sentinel — Local Sovereignty</h2>
 
       <p>
-        The Anchor Sentinel runs entirely on your own computer. It generates a
-        cryptographic fingerprint of any file, document, or AI interaction and
-        records it in a tamper-evident ledger that lives strictly on your hard drive.
+        The Anchor Sentinel runs entirely on your own hardware. It generates a cryptographic
+        fingerprint of any file, document, or data record and anchors it to a tamper-evident
+        local ledger that never leaves your premises.
+      </p>
+
+      <p>
         No cloud. No third party. Just math.
       </p>
 
       <div class="key-line">
-        "Every other digital notary asks you to trust their company or a public
-        blockchain. Pharos asks you to trust the math on the machine sitting right
-        in front of you. If our company disappears tomorrow, your proof of truth
-        remains immutable on your hardware."
+        "Every other digital notary asks you to trust their company or a public blockchain.
+        Pharos asks you to trust the math on the machine sitting in your server room. If our
+        company disappears tomorrow, your proof of truth remains immutable on your hardware."
       </div>
 
       <p>
-        Each anchored document receives a Certificate of Verity — proof that it
-        existed, unchanged, at a specific moment in time.
+        Each audited record receives a Veritatem State Hash — a SHA-256 cryptographic seal
+        proving that specific data existed, unchanged, at a specific moment in time. The seal
+        is verifiable by any third party without revealing the underlying data.
       </p>
+
+      <p>
+        We are currently selecting five founding partners across the U.S. legal
+        and real estate market for our exclusive Founding Partner Program.
+        Founding Partners receive full Anchor Sentinel access for 30 days of
+        real-world stress testing. Firms that convert join the Pharos Anchor
+        network at permanent founding client pricing — locked for the life of
+        their engagement.
+      </p>
+
+      <div class="founding-card">
+        <div class="founding-card-header">
+          <div class="founding-title">Founding Partner Program</div>
+          <div class="founding-subtitle">30-Day Zero-Cost Access</div>
+        </div>
+        <ul class="founding-features">
+          <li>Remote installation — Mac and Windows</li>
+          <li>30-minute founding partner onboarding session with the founder</li>
+          <li>30 days of direct founder access</li>
+          <li>Unlimited document anchoring during pilot period</li>
+          <li>In exchange for weekly feedback and a case study, Founding Partners lock in preferred, permanently discounted pricing after 30 days</li>
+          <li>Early access to post-quantum security architecture</li>
+        </ul>
+        <div class="founding-seeking">Seeking: <span>Law firms &nbsp;&middot;&nbsp; Title companies &nbsp;&middot;&nbsp; Real estate brokerages &nbsp;&middot;&nbsp; U.S. nationwide</span></div>
+        <a href="#contact" class="founding-cta">Apply for Partnership</a>
+
+      </div>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- 3b. ASTRUM OS -->
+  <!-- 4. ASTRUM OS -->
   <section id="astrum" class="section">
     <div class="card">
-      <h2>The Astrum OS &mdash; Zero-Trust AI Orchestration</h2>
-
-      <p>You cannot audit an AI if the AI can rewrite the audit.</p>
+      <h2>The Astrum OS — Zero-Trust AI Orchestration</h2>
 
       <p>
-        Pharos Anchor isn't just a cryptographic ledger; it is powered by the Astrum OS,
-        a proprietary AI orchestration layer built for environments that require
-        absolute certainty.
+        You cannot audit an AI if the AI can rewrite the audit.
       </p>
 
-      <ul style="list-style:none; margin: 28px 0; padding: 0; display: flex; flex-direction: column; gap: 20px;">
-        <li style="border-left: 3px solid var(--gold); padding-left: 18px; line-height: 1.7;">
-          <strong>Local Data Privacy:</strong> Before Astrum sends your prompt to a cloud AI
-          provider, it scrubs and tokenizes your sensitive data locally. The external AI
-          model never sees your raw contracts or personal information.
-        </li>
-        <li style="border-left: 3px solid var(--gold); padding-left: 18px; line-height: 1.7;">
-          <strong>The Sovereign Lock:</strong> Astrum operates on a hard-coded constitutional
-          framework. It physically prevents the AI from executing unauthorized administrative
-          commands or falling victim to external &ldquo;jailbreaks.&rdquo;
-        </li>
-        <li style="border-left: 3px solid var(--gold); padding-left: 18px; line-height: 1.7;">
-          <strong>Deterministic Auditing:</strong> Astrum evaluates its own answers against
-          your immutable rules before showing them to you. If the AI hallucinates, the system
-          autonomously rejects the response.
-        </li>
-      </ul>
+      <p>
+        The Astrum OS is a proprietary AI orchestration layer built for environments that require
+        absolute certainty. It operates entirely on-premises — no cloud API calls, no external
+        model queries, no data egress of any kind.
+      </p>
 
       <p>
-        With Astrum, you aren't just getting an AI assistant. You are getting a
-        mathematically constrained intelligence that proves its own compliance on your
-        local hard drive.
+        <strong>Deterministic Primacy:</strong> The Veritatem Audit Protocol separates mathematical
+        verification from AI synthesis entirely. Auditing logic runs as pure deterministic code —
+        not as an AI prompt. The result is mathematically guaranteed, not probabilistically suggested.
+      </p>
+
+      <p>
+        <strong>The Adams Adversarial Gate:</strong> A dual-model consensus loop where a Synthesizer
+        generates auditing logic and an independent Watchdog verifies the math via JSON-locked
+        structured output. If the Watchdog detects logic drift, a VETO is issued and execution is
+        severed before output is generated.
+      </p>
+
+      <p>
+        <strong>The Sovereign Lock:</strong> Astrum operates on a hard-coded constitutional framework.
+        It physically prevents unauthorized state changes and maintains a cryptographic audit trail of
+        every decision made within the system.
+      </p>
+
+      <p>
+        With Astrum, you are not getting an AI assistant. You are getting a mathematically constrained
+        intelligence that proves its own compliance on your local hardware — with zero cloud dependency.
       </p>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- 3c. SOVEREIGN BRIDGE -->
-  <section id="bridge" class="section">
+  <!-- 5. BENCHMARK -->
+  <section id="benchmark" class="section">
     <div class="card">
-      <h2>The Sovereign Bridge &mdash; Enterprise Scale</h2>
+      <h2>Proven at Scale — Legacy Infrastructure Target</h2>
 
       <p>
-        Public blockchains are highly secure, but they are too slow and expensive for
-        businesses generating thousands of digital records a day.
+        The Pharos Protocol was benchmarked against a 100,000-row financial ledger on an 11-year-old
+        MacBook Pro (2.7GHz dual-core Intel i5, 8GB DDR3 RAM) — hardware typical of legacy enterprise
+        and forward-deployed environments.
+      </p>
+
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Function</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>L1</td><td>Deterministic Audit</td><td>0.5098s</td></tr>
+          <tr><td>L2</td><td>Vector Retrieval</td><td>0.5098s</td></tr>
+          <tr><td>L3</td><td>AI Synthesis</td><td>Bypassed</td></tr>
+          <tr><td>L4</td><td>Cryptographic Seal</td><td>0.0000s</td></tr>
+          <tr><td>Total</td><td>Full Pipeline</td><td>0.9899s</td></tr>
+        </tbody>
+      </table>
+
+      <div class="hash-line">
+        Veritatem State Hash: d7000ee752b2bff6a7fa6d802adbc59adfdbc66b88eb856e57f003df2f105809
+      </div>
+
+      <p>
+        Sub-second cryptographic finality on consumer hardware. No GPU. No cloud. No compromise.
       </p>
 
       <p>
-        Pharos solves this with our proprietary bridging protocol <span class="muted">(Patent Pending)</span>.
-        We batch your local verifications and anchor them to a global blockchain all at once.
-        You get the mathematical certainty of a public network without the friction of paying
-        individual transaction fees. Enterprise-grade security at a fraction of the cost.
+        If it runs here, it runs anywhere.
       </p>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- 3d. BUILT FOR TOMORROW -->
-  <section id="tomorrow" class="section">
+  <!-- 6. BUILT FOR TOMORROW -->
+  <section id="built" class="section">
     <div class="card">
       <h2>Built For Tomorrow</h2>
 
       <p>
-        Pharos Anchor LLC currently holds five provisional patents protecting our
-        architecture. Our roadmap is designed not just for the threats of today, but
-        for the post-quantum computing environments of tomorrow. We are building the
-        permanent infrastructure for digital truth.
+        Pharos Anchor LLC holds six provisional patents protecting the full sovereign enterprise stack —
+        from the foundational cryptographic protocol through the neural compression engine and
+        deterministic routing layer.
       </p>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- 4. AI WORKSHOP -->
-  <section id="workshop" class="section">
-    <div class="card">
-      <h2>The AI Workshop</h2>
 
       <p>
-        In a single session, you will learn how to use AI tools to build real,
-        working software for your business — without a computer science degree,
-        without hiring a developer, and without waiting months for an idea to
-        become a product. We start from your specific problem and end with a
-        working prototype you own. The goal is not to teach you about AI.
-        The goal is to make you powerful with it.
+        The roadmap is designed not just for the compliance requirements of today, but for post-quantum
+        computing environments. Structural slots for Falcon-1024 lattice-based signatures are built into
+        the current architecture, providing a clear path to cryptographic immunity against quantum decryption.
       </p>
-
-      <div class="pricing-row">
-        <div>
-          <div class="price">$1,000</div>
-          <div class="price-note">Single session &mdash; in person or remote</div>
-          <div class="target">Ideal for: <span>Small business owners ready to build</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider" />
-
-  <!-- 5. CUSTOM AGENT BUILD -->
-  <section id="agent-build" class="section">
-    <div class="card">
-      <h2>Custom Agent Build</h2>
 
       <p>
-        You have a specific problem. We build the specific tool that solves it.
-        From lead generation bots to document automation to client intake systems —
-        if it can be built with AI, we scope it, build it, and hand you the keys.
-        You own it completely. No retainer. No dependency. Just a working tool
-        and the knowledge to run it.
+        We are building the permanent infrastructure for digital truth.
       </p>
-
-      <div class="pricing-row">
-        <div>
-          <div class="price">Fees vary by scope</div>
-          <div class="price-note">Contact us to discuss your project</div>
-          <div class="target">Ideal for: <span>Businesses with a specific problem and no time to wait for a developer</span></div>
-        </div>
-      </div>
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- 6. CONTACT -->
+  <!-- 7. CONTACT -->
   <section id="contact" class="section">
     <h2>Get In Touch</h2>
 
